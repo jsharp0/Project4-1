@@ -1,0 +1,54 @@
+﻿@model ContactModel
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = ViewBag.action + " Contact";
+}
+
+<form asp-action="Edit" method="post">
+    <div class="mb-3">
+        <label for="firstName" class="form-label">First Name</label>
+        <input asp-for="firstName" type="text" class="form-control" placeholder="John">
+    </div>
+
+    <div class="mb-3">
+        <label for="lastName" class="form-label">Last Name</label>
+        <input asp-for="lastName" type="text" class="form-control" placeholder="Smith">
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="phone" for="phone" class="form-label">Phone</label>
+        <input asp-for="phone" type="text" class="form-control" placeholder="###-###-####">
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="email" for="email" class="form-label">Email</label>
+        <input asp-for="email" type="text" class="form-control" placeholder="example@example.com">
+    </div>
+
+    <div class="mb-3">
+        <label for="firstName" class="form-label">Category</label>
+        <select asp-for="categoryID" class="form-select" aria-label="Select category">
+            <option selected>Please select one of the following categories...</option>
+            @foreach (Category c in ViewBag.Categories)
+            {
+                <option value="@c.categoryID">@c.name</option>
+            }
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="organization" class="form-label">Organization</label>
+        <input asp-for="organization" type="text" class="form-control" placeholder="Apple Inc">
+    </div>
+
+    <button class="btn btn-dark" type="submit">Add</button>
+    @if (ViewBag.action == "Edit")
+    {
+        <button asp-action="Details" asp-controller="Contact" asp-route-id="@Model.ID" class="btn btn-dark">Cancel</button>
+    }
+    else
+    {
+        <button asp-action="Index" asp-controller="Home" class="btn btn-dark">Cancel</button>
+    }
+</form>

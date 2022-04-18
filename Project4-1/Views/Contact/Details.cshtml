@@ -1,0 +1,48 @@
+﻿@model ContactModel
+
+@{
+    Layout = "_Layout";
+}
+
+<h1 class="m-1">Contact Details</h1>
+
+<ul class="list-group">
+    <li class="list-group-item">
+        <p>Name: <span class="ml-5">@Model.firstName @Model.lastName</span></p>
+    </li>
+    <li class="list-group-item">
+        <p>Phone: <span class="ml-5">@Model.phone</span></p>
+    </li>
+    <li class="list-group-item">
+        <p>Email: <span class="ml-5">@Model.email</span></p>
+    </li>
+    <li class="list-group-item">
+        <p>Category: <span class="ml-5">@Model.category</span></p>
+    </li>
+
+    @if (Model.organization != null)
+    {
+        <li class="list-group-item">
+            <p>Organization: <span class="ml-5">@Model.organization</span></p>
+        </li>
+    }
+
+    <li class="list-group-item">
+        <p>Category: <span class="ml-5">@Model.category.name</span></p>
+    </li>
+
+    <li class="list-group-item">
+        <p>Date Added: <span class="ml-5">@Model.CreatedDate</span></p>
+    </li>
+    <li class="list-group-item">
+        <form method="get" asp-action="Edit" asp-controller="Contact" asp-route-id="@Model.ID" class="d-inline">
+            <button class="btn btn-dark">Edit</button>
+        </form>
+        <form method="get" asp-action="Delete" asp-controller="Contact" asp-route-id="@Model.ID" class="d-inline">
+            <button class="btn btn-dark">Delete</button>
+        </form>
+        <form method="post" asp-action="Index" asp-controller="Contact" class="d-inline">
+            <button class="btn btn-dark">Home</button>
+        </form>
+    </li>
+</ul>

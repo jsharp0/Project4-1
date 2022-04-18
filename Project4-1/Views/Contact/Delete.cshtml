@@ -1,0 +1,15 @@
+﻿@model ContactModel
+
+@{
+    Layout = "_Layout";
+}
+
+<div class="alert alert-danger" role="alert">
+    Are you sure you would like to delete this record?
+
+    <form method="post" asp-action="Delete" class="d-inline">
+        <input type="hidden" asp-for="ID" />
+        <button class="btn btn-dark" type="submit">Delete</button>
+    </form>
+    <button class="btn btn-danger">Cancel</button>
+</div>
