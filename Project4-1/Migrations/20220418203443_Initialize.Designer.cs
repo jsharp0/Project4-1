@@ -10,8 +10,8 @@ using Project4_1.Models;
 namespace Project4_1.Migrations
 {
     [DbContext(typeof(ContactDbContext))]
-    [Migration("20220418142602_Category")]
-    partial class Category
+    [Migration("20220418203443_Initialize")]
+    partial class Initialize
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
