@@ -28,6 +28,11 @@ namespace Project4_1
             services.AddControllersWithViews();
             services.AddDbContext<ContactDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("ContactDbContext")));
+            services.AddRouting(options =>
+            {
+                options.AppendTrailingSlash = true;
+                options.LowercaseUrls = true;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,7 +59,7 @@ namespace Project4_1
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}/{slug?}");
             });
         }
     }

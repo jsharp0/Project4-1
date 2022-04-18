@@ -21,11 +21,11 @@
         {
         <tr>
             <td scope="row"><a asp-controller="Contact" asp-action="Details" 
-                               asp-route-id="@contact.ID" class="link-primary">
+                               asp-route-id="@contact.ID" asp-route-slug="@contact.nameSlug" class="link-primary">
                 @contact.firstName</a></td>
             <td>
                 <a asp-controller="Contact" asp-action="Details" 
-                               asp-route-id="@contact.ID" class="link-primary">@contact.lastName</a>
+                               asp-route-id="@contact.ID" asp-route-slug="@contact.nameSlug" class="link-primary">@contact.lastName</a>
             </td>
             <td>@contact.phone</td>
             <td>@contact.email</td>
