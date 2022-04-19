@@ -61,7 +61,7 @@ namespace Project4_1.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Project4_1.Models.ContactModel", b =>
+            modelBuilder.Entity("Project4_1.Models.Contact", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -130,7 +130,7 @@ namespace Project4_1.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Project4_1.Models.ContactModel", b =>
+            modelBuilder.Entity("Project4_1.Models.Contact", b =>
                 {
                     b.HasOne("Project4_1.Models.Category", "category")
                         .WithMany()

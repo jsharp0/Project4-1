@@ -37,7 +37,7 @@ namespace Project4_1.Controllers
         {
             ViewBag.action = "Add";
             ViewBag.Categories = context.Categories.OrderBy(c => c.name).ToList();
-            return View("Edit", new ContactModel());
+            return View("Edit", new Contact());
         }
 
         public IActionResult Delete(int id)
@@ -54,7 +54,7 @@ namespace Project4_1.Controllers
         }
 
         [HttpPost]
-        public IActionResult Edit(ContactModel contact)
+        public IActionResult Edit(Contact contact)
         {
             if (ModelState.IsValid)
             {
@@ -75,7 +75,7 @@ namespace Project4_1.Controllers
         }
 
         [HttpPost]
-        public IActionResult Delete(ContactModel contactId)
+        public IActionResult Delete(Contact contactId)
         {
             //var contact = context.Contacts.Find(id);
             var contact = context.Contacts.Find(contactId.ID);

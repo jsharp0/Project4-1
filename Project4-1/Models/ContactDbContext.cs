@@ -9,7 +9,7 @@ namespace Project4_1.Models
         {
         }
 
-        public DbSet<ContactModel> Contacts { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
         public DbSet<Category> Categories { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -42,8 +42,8 @@ namespace Project4_1.Models
                 }
                 );
 
-            modelBuilder.Entity<ContactModel>().HasData(
-                    new ContactModel
+            modelBuilder.Entity<Contact>().HasData(
+                    new Contact
                     {
                         ID = 1,
                         firstName = "Mark",
@@ -53,7 +53,7 @@ namespace Project4_1.Models
                         categoryID = "3",
                         CreatedDate = new DateTime()
                     },
-                    new ContactModel
+                    new Contact
                     {
                         ID = 2,
                         firstName = "Linda",
@@ -63,7 +63,7 @@ namespace Project4_1.Models
                         categoryID = "5",
                         CreatedDate = new DateTime()
                     },
-                    new ContactModel
+                    new Contact
                     {
                         ID = 3,
                         firstName = "Bailey",

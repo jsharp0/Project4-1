@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Project4_1.Models
 {
-    public class ContactModel
+    public class Contact
     {
         public int ID { get; set; }
 
